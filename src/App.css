@@ -1,0 +1,58 @@
+html {
+  background-color: greenyellow;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0;
+  background-color: yellow;
+  color: darkblue;
+  padding: 8px;
+}
+
+h2 {
+  font-size: 18px;
+  color: darkblue;
+}
+
+.center {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  vertical-align: center;
+}
+
+.player {
+  margin: 10px;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  background-color: darkgray;
+}
+
+.score {
+  padding: 1px;
+  font-size: small;
+  font-weight: bold;
+  background-color: yellow;
+}
+
+.rnd-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  margin: 2px;
+  cursor: pointer;
+  background-color: yellow;
+  color: darkblue;
+}
+
+.rnd-btn:hover {
+  background-color: lightyellow;
+}
