@@ -53,6 +53,15 @@ h2 {
   color: darkblue;
 }
 
+.action {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  color: darkblue;
+}
+
 .rnd-btn:hover {
   background-color: lightyellow;
 }

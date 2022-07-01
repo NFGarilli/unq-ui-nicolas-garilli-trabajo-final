@@ -1,4 +1,8 @@
 import './App.css';
+import { FaHandPaper, FaHandRock, FaHandScissors } from 'react-icons/fa';
+import Player from './Components/Player'
+import ActionButton from './Components/ActionButton';
+
 
 function App() {
   return (
@@ -6,19 +10,13 @@ function App() {
       <h1>Nicolas Garilli RPS</h1>
       <div>
         <div className='container'>
-          <div className='player'>
-            <div className='score'> Player 1: 0</div>
-              <div></div>
-            </div>
-            <div className='player'>
-            <div className='score'> Player 2: 0</div>
-              <div></div>
-            </div>
+          <Player name = "Player" action="rock"/>
+          <Player name = "Computer" action="rock"/>           
           </div>
           <div>
-            <button className="rnd-btn">Rock</button>
-            <button className="rnd-btn">Paper</button>
-            <button className="rnd-btn">Scissors</button>
+            <ActionButton action='rock'/>
+            <ActionButton action='paper'/>
+            <ActionButton action='scissors'/>
           </div>
           <h2>Player 1 Wins</h2>
         </div>
