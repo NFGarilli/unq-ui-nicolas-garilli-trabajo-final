@@ -4,6 +4,10 @@ import { useNavigate } from "react-router-dom";
 const MainMenu = () => {
   const navigate = useNavigate();
   const goToHome = () => navigate("/");
+  const audio = new Audio("/click.mp3")
+    const start = () => {
+    audio.play()
+}
 
   return (
     <div className="center">
@@ -44,7 +48,7 @@ const MainMenu = () => {
         </div>
 
         <div className="guide-btn-container">
-          <button className="btn" onClick={goToHome}>
+          <button className="btn" onClick={() => { goToHome(); start()}}>
             {" "}
             Volver al inicio{" "}
           </button>

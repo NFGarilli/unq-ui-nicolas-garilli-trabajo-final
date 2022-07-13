@@ -13,6 +13,21 @@ const actions = {
   spock: ["scissors", "rock"],
 };
 
+const audio = new Audio("/click.mp3");
+const start = () => {
+  audio.play();
+};
+
+const win = new Audio("/win.mp3");
+const youWin = () => {
+  win.play();
+};
+
+const loose = new Audio("/loose.mp3");
+const youLoose = () => {
+  loose.play();
+};
+
 function randomAction() {
   const keys = Object.keys(actions);
   const index = Math.floor(Math.random() * keys.length);
@@ -47,23 +62,31 @@ function Game() {
     setWinner(null);
   };
 
+  
+  
+
   const onActionSelected = (selectedAction) => {
+   
     const newCpuAction = randomAction();
 
     setPlayerAction(selectedAction);
     setCpuAction(newCpuAction);
+
     const newWinner = calculateWinner(selectedAction, newCpuAction);
     setWinner(newWinner);
     if (newWinner === -1) {
       setPlayerScore(playerScore + 1);
+      youWin();   
+
     } else if (newWinner === 1) {
       setCpuScore(cpuScore + 1);
+      youLoose();
     }
   };
 
   return (
     <div className="center">
-      <h1>Nicolas Garilli Piedra, Papel, Tijera, Lagarto o Spock</h1>
+      <h1>Piedra, Papel, Tijera, Lagarto o Spock</h1>
       <div className="game-container">
         <div className="container">
           <Player name="Jugador" score={playerScore} action={playerAction} />
@@ -80,10 +103,10 @@ function Game() {
           <ShowWinner winner={winner} />
         </div>
         <div className="btn-game-container">
-          <button className="btn-game" onClick={() => resetGame()}>
+          <button className="btn-game" onClick={() => { resetGame(); start()}}>
             Resetear juego
           </button>
-          <button className="btn-game" onClick={goToHome}>
+          <button className="btn-game" onClick={() => { goToHome(); start()}}>
             {" "}
             Ir al Inicio{" "}
           </button>
