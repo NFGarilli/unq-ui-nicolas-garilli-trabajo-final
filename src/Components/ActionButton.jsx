@@ -1,13 +1,10 @@
-import React from 'react'
-import { FaHandPaper, FaHandRock, FaHandScissors } from 'react-icons/fa';
-import ActionIcon from './ActionIcon';
+import React from "react";
+import ActionIcon from "./ActionIcon";
 
-export default function ActionButton({action = "rock"}){
-
-    return (
-        <button className="rnd-btn">
-            <ActionIcon action={action} size={20}/>
-        </button>
-    )
-
+export default function ActionButton({ action = "rock", onActionSelected }) {
+  return (
+    <button className="rnd-btn" onClick={() => onActionSelected(action)}>
+      <ActionIcon action={action} size={40} />
+    </button>
+  );
 }

@@ -1,27 +1,25 @@
-import './App.css';
-import { FaHandPaper, FaHandRock, FaHandScissors } from 'react-icons/fa';
-import Player from './Components/Player'
-import ActionButton from './Components/ActionButton';
-
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import Game from "./Game";
+import MainMenu from "./Components/MainMenu";
+import NotFound from "./Components/NotFound";
+import Guide from "./Components/Guide";
+import About from "./Components/About";
 
 function App() {
   return (
-    <div className='center'>
-      <h1>Nicolas Garilli RPS</h1>
-      <div>
-        <div className='container'>
-          <Player name = "Player" action="rock"/>
-          <Player name = "Computer" action="rock"/>           
-          </div>
-          <div>
-            <ActionButton action='rock'/>
-            <ActionButton action='paper'/>
-            <ActionButton action='scissors'/>
-          </div>
-          <h2>Player 1 Wins</h2>
-        </div>
-      </div>
-   
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<MainMenu />} />
+          <Route exact path="/Game" element={<Game />} />
+          <Route exact path="/Guide" element={<Guide />} />
+          <Route exact path="/About" element={<About />} />
+          <Route exact path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
