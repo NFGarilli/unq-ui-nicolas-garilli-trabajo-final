@@ -8,7 +8,7 @@
 
 #### 2. Hacer click en “Code”.
 
-#### 3. En la pesataña abierta, copiar el link.
+#### 3. En la ventana emergente, copiar el link.
 
 #### 4. Abrir git bash en una carpeta deseada donde se clonara el proyecto.
 
@@ -18,7 +18,7 @@ git clone https://github.com/NFGarilli/unq-ui-nicolas-garilli-trabajo-final.git
 ```
 #### 6. Descargue e instale [Visual Studio Code](https://code.visualstudio.com/) según su SO. 
 
-#### 7. Descargue e instalar [Node.js](https://nodejs.org/en/download/) según su SO.
+#### 7. Descargue e instale [Node.js](https://nodejs.org/en/download/) según su SO.
 
 #### 8. Abrir la carpeta unq-ui-nicolas-garilli-trabajo-final con Visual Studio Code
 
@@ -36,3 +36,5 @@ npm install
 ```sh	
 npm start
 ```
+
+#### Acontinuación, un web browser se abrira con el proyecto, que te diviertas!
