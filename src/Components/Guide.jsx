@@ -8,10 +8,9 @@ const MainMenu = () => {
   const navigate = useNavigate();
   const goToHome = () => navigate("/");
 
-
   return (
     <div className="center">
-      <Title text="Como jugar Piedra, Papel, Tijera, Lagarto o Spock"/>
+      <Title text="Como jugar Piedra, Papel, Tijera, Lagarto o Spock" />
       <div className="guide-container">
         <div className="text-container">
           <p>
@@ -48,7 +47,7 @@ const MainMenu = () => {
         </div>
 
         <div className="guide-btn-container">
-        <GenericButton
+          <GenericButton
             handleFunction={() => {
               goToHome();
               start();

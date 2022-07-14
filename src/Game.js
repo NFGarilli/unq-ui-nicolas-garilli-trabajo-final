@@ -40,14 +40,14 @@ function Game() {
   const [cpuAction, setCpuAction] = useState("");
   const [playerScore, setPlayerScore] = useState(0);
   const [cpuScore, setCpuScore] = useState(0);
-  const [winner, setWinner] = useState(0);
+  const [winner, setWinner] = useState(2);
 
   const resetGame = () => {
     setPlayerScore(0);
     setCpuScore(0);
     setPlayerAction(null);
     setCpuAction(null);
-    setWinner(null);
+    setWinner(2);
   };
 
   const onActionSelected = (selectedAction) => {
