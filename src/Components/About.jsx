@@ -1,19 +1,19 @@
 import "../App.css";
 import { useNavigate } from "react-router-dom";
+import { start } from "../Helper";
+import GenericButton from "./GenericButton";
+import Title from "./Title";
 
 const About = () => {
   const navigate = useNavigate();
   const goToHome = () => navigate("/");
-  const audio = new Audio("/click.mp3");
-  const start = () => {
-    audio.play();
-  };
+
 
   return (
     <div className="center">
-      <h1>Piedra, Papel, Tijera, Lagarto o Spock</h1>
+      <Title text="Piedra, Papel, Tijera, Lagarto o Spock"/>
       <div className="subtitle">
-        <h2> Trabajo Final Integrador TFI » 1°C 2022 </h2>
+        <Title text="Trabajo Final Integrador (TFI) » 1°C 2022" />
       </div>
       <div className="guide-container">
         <div className="text-container">
@@ -35,16 +35,7 @@ const About = () => {
         </div>
       </div>
       <div className="guide-btn-container">
-        <button
-          className="btn"
-          onClick={() => {
-            goToHome();
-            start();
-          }}
-        >
-          {" "}
-          Volver al inicio{" "}
-        </button>
+      <GenericButton handleFunction={() => {goToHome(); start()}} text="Volver al inicio" className="btn" />
       </div>
     </div>
   );

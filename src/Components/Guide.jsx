@@ -1,17 +1,17 @@
 import "../App.css";
 import { useNavigate } from "react-router-dom";
+import Title from "./Title";
+import { start } from "../Helper";
+import GenericButton from "./GenericButton";
 
 const MainMenu = () => {
   const navigate = useNavigate();
   const goToHome = () => navigate("/");
-  const audio = new Audio("/click.mp3")
-    const start = () => {
-    audio.play()
-}
+
 
   return (
     <div className="center">
-      <h1>Como jugar Piedra, Papel, Tijera, Lagarto o Spock</h1>
+      <Title text="Como jugar Piedra, Papel, Tijera, Lagarto o Spock"/>
       <div className="guide-container">
         <div className="text-container">
           <p>
@@ -48,10 +48,14 @@ const MainMenu = () => {
         </div>
 
         <div className="guide-btn-container">
-          <button className="btn" onClick={() => { goToHome(); start()}}>
-            {" "}
-            Volver al inicio{" "}
-          </button>
+        <GenericButton
+            handleFunction={() => {
+              goToHome();
+              start();
+            }}
+            text="Volver al inicio"
+            className="btn"
+          />
         </div>
       </div>
     </div>

@@ -4,6 +4,9 @@ import ActionButton from "./Components/ActionButton";
 import { useState } from "react";
 import ShowWinner from "./Components/ShowWinner";
 import { useNavigate } from "react-router-dom";
+import { start, youWin, youLoose } from "./Helper";
+import Title from "./Components/Title";
+import GenericButton from "./Components/GenericButton";
 
 const actions = {
   rock: ["scissors", "lizard"],
@@ -11,21 +14,6 @@ const actions = {
   scissors: ["paper", "lizard"],
   lizard: ["paper", "spock"],
   spock: ["scissors", "rock"],
-};
-
-const audio = new Audio("/click.mp3");
-const start = () => {
-  audio.play();
-};
-
-const win = new Audio("/win.mp3");
-const youWin = () => {
-  win.play();
-};
-
-const loose = new Audio("/loose.mp3");
-const youLoose = () => {
-  loose.play();
 };
 
 function randomAction() {
@@ -62,11 +50,7 @@ function Game() {
     setWinner(null);
   };
 
-  
-  
-
   const onActionSelected = (selectedAction) => {
-   
     const newCpuAction = randomAction();
 
     setPlayerAction(selectedAction);
@@ -76,8 +60,7 @@ function Game() {
     setWinner(newWinner);
     if (newWinner === -1) {
       setPlayerScore(playerScore + 1);
-      youWin();   
-
+      youWin();
     } else if (newWinner === 1) {
       setCpuScore(cpuScore + 1);
       youLoose();
@@ -86,7 +69,7 @@ function Game() {
 
   return (
     <div className="center">
-      <h1>Piedra, Papel, Tijera, Lagarto o Spock</h1>
+      <Title text="Piedra, Papel, Tijera, Lagarto o Spock"></Title>
       <div className="game-container">
         <div className="container">
           <Player name="Jugador" score={playerScore} action={playerAction} />
@@ -103,13 +86,22 @@ function Game() {
           <ShowWinner winner={winner} />
         </div>
         <div className="btn-game-container">
-          <button className="btn-game" onClick={() => { resetGame(); start()}}>
-            Resetear juego
-          </button>
-          <button className="btn-game" onClick={() => { goToHome(); start()}}>
-            {" "}
-            Ir al Inicio{" "}
-          </button>
+          <GenericButton
+            handleFunction={() => {
+              resetGame();
+              start();
+            }}
+            text="Resetear juego"
+            className="btn-game"
+          />
+          <GenericButton
+            handleFunction={() => {
+              goToHome();
+              start();
+            }}
+            text="Ir al Inicio"
+            className="btn-game"
+          />
         </div>
       </div>
     </div>

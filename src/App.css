@@ -300,6 +300,7 @@ h3 {
 .guide-btn-container {
   display: flex;
   justify-content: center;
+
 }
 
 .tutorial-container {
@@ -319,21 +320,25 @@ h3 {
   border-radius: 8px;
   text-decoration: none;
   letter-spacing: 1px;
+  gap: 8rem;
 }
 
 .iframe-video {
   display: flex;
   flex-direction: column;
-  height: 25rem;
   position: relative;
+  width: 15rem;
+  height: 15rem;
+  object-fit: contain;
 }
 
 .guide-rpsls {
   display: flex;
   flex-direction: column;
-  width: 25rem;
-  height: 0;
+  width: 15rem;
+  height: 15rem;
   position: relative;
+  object-fit: contain;
 }
 
 .logo-unq {
